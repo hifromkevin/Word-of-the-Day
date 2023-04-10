@@ -8,7 +8,7 @@ class FeedbackApp {
   }
 
   getDate() {
-    return `${this.date.getMonth()}/${this.date.getDate()}/${this.date.getFullYear()}`
+    return `${this.date.getMonth() + 1}/${this.date.getDate()}/${this.date.getFullYear()}`;
   }
 
   starRating(rating, visualRating = '') {
@@ -23,9 +23,11 @@ class FeedbackApp {
     let i = 0;
     const commentWords = this.comment.split(' ');
 
-    while (i < commentWords.length && truncatedComment.length < max) {
+    while (i < commentWords.length - 1 && truncatedComment.length < max) {
       if (truncatedComment.length + commentWords[i].length < max) {
-        truncatedComment = `${truncatedComment} ${commentWords[i]}`;
+        truncatedComment = truncatedComment.length
+          ? `${truncatedComment} ${commentWords[i]}`
+          : commentWords[i]
       } else {
         truncatedComment = `${truncatedComment}...`;
         break;
