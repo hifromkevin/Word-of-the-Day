@@ -1,5 +1,5 @@
 class FeedbackApp {
-  constructor(word, comment, date, rating) {
+  constructor({ word, comment, date, rating }) {
     this.word = word;
     this.comment = comment;
     this.date = new Date(date);
