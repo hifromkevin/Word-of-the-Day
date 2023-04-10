@@ -29,3 +29,5 @@ swashbuckler: Yar, a good word, matey! Shiver me timbers! ★★★★½ (9/19/2
 - `npm start` to run app
 - `npm run test` to run testing
 
+Requirements 
+- Node (v19.8.1 recommended)
