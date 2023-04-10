@@ -25,7 +25,7 @@ swashbuckler: Yar, a good word, matey! Shiver me timbers! ★★★★½ (9/19/2
 ```
 
 ## To Run the App
-`npm install` to install dependencies
-`npm start` to run app
-`npm run test` to run testing
+- `npm install` to install dependencies
+- `npm start` to run app
+- `npm run test` to run testing
 
