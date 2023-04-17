@@ -7,17 +7,23 @@ class FeedbackApp {
     this.maxLength = 80;
   }
 
-  getDate() {
-    return `${this.date.getMonth() + 1}/${this.date.getDate()}/${this.date.getFullYear()}`;
-  }
+  getDate = () => `${this.date.getMonth() + 1}/${this.date.getDate()}/${this.date.getFullYear()}`;
 
-  starRating(rating, visualRating = '') {
-    if (rating >= 20) return this.starRating(rating - 20, `${visualRating}★`);
+  starRating = () => {
+    let rating = this.rating;
+    let visualRating = '';
 
-    return (rating >= 1) ? `${visualRating}½` : visualRating;
+    while (rating >= 20) {
+      visualRating += '★';
+      rating -= 20;
+    }
+
+    if (rating > 0) visualRating += '½';
+
+    return visualRating;
   };
 
-  truncateComment(max) {
+  truncateComment = (max) => {
     let truncatedComment = '';
     let commentLength = 0;
     let i = 0;
@@ -38,7 +44,7 @@ class FeedbackApp {
     return truncatedComment;
   }
 
-  formatFeedback() {
+  formatFeedback = () => {
     const wordLength = this.word.length;
     const commentLength = this.comment.length;
     const ratingLength = this.starRating(this.rating).length;
